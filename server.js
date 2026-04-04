@@ -10,8 +10,8 @@ app.use(bodyParse.json());
 app.use(bodyParse.urlencoded({ extended: true }));
 const port = 3000;
 
-app.use(adminRoutes);
-app.use(shopRoutes);
+app.use('/admin', adminRoutes);
+app.use('/shop', shopRoutes);
 
 app.use((req, res) => {
     res.status(404).send('<h1>Page Not Found</h1>');
